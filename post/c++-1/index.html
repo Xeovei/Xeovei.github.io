@@ -1,0 +1,250 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>C++程序设计(一) [cin,cout加速，基本数据类型，保留浮点数] | Xeovei</title>
+<link rel="shortcut icon" href="https://Xeovei.github.io/favicon.ico?v=1708774079339">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://Xeovei.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="C++程序设计(一) [cin,cout加速，基本数据类型，保留浮点数] | Xeovei - Atom Feed" href="https://Xeovei.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="程序基本概念
+1.常量：执行过程中不可改变的量（const int...）
+2.变量：执行过程中可以改变的量（int a , long long b....）
+3.关键字：不能用作程序中的标识符（变量名不能为关键字）
+基本数据类型
+int:..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Xeovei.github.io">
+  <img class="avatar" src="https://Xeovei.github.io/images/avatar.png?v=1708774079339" alt="">
+  </a>
+  <h1 class="site-title">
+    Xeovei
+  </h1>
+  <p class="site-description">
+    光锥之内皆是命运 光锥之外皆是虚妄
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              C++程序设计(一) [cin,cout加速，基本数据类型，保留浮点数]
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-02-19
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://Xeovei.github.io/post-images/c++-1.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h3 id="程序基本概念">程序基本概念</h3>
+<p>1.常量：执行过程中不可改变的量（const int...）</p>
+<p>2.变量：执行过程中可以改变的量（int a , long long b....）</p>
+<p>3.关键字：不能用作程序中的标识符（变量名不能为关键字）</p>
+<h3 id="基本数据类型">基本数据类型</h3>
+<p><strong>int</strong>: 整数类型，占用4字节，范围：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><msup><mn>2</mn><mn>31</mn></msup><mo>∼</mo><msup><mn>2</mn><mn>31</mn></msup><mo>−</mo><mn>1</mn><mo>≈</mo><mrow><mo fence="true">∣</mo><mn>2.1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup><mo fence="true">∣</mo></mrow></mrow><annotation encoding="application/x-tex">-2^{31}\sim2^{31}-1\approx\left 
+|2.1\times10^{9}   \right |</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.212em;vertical-align:-0.35000999999999993em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.86199em;"><span style="top:-2.2559899999999997em;"><span class="pstrut" style="height:2.606em;"></span><span class="delimsizinginner delim-size1"><span>∣</span></span></span><span style="top:-2.86199em;"><span class="pstrut" style="height:2.606em;"></span><span class="delimsizinginner delim-size1"><span>∣</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35000999999999993em;"><span></span></span></span></span></span></span><span class="mord">2</span><span class="mord">.</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.86199em;"><span style="top:-2.2559899999999997em;"><span class="pstrut" style="height:2.606em;"></span><span class="delimsizinginner delim-size1"><span>∣</span></span></span><span style="top:-2.86199em;"><span class="pstrut" style="height:2.606em;"></span><span class="delimsizinginner delim-size1"><span>∣</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35000999999999993em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p><strong>long long</strong>: 64位整数类型，占用8字节，范围：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><msup><mn>2</mn><mn>63</mn></msup><mo>∼</mo><msup><mn>2</mn><mn>63</mn></msup><mo>−</mo><mn>1</mn><mo>≈</mo><mrow><mo fence="true">∣</mo><mn>9.2</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>18</mn></msup><mo fence="true">∣</mo></mrow></mrow><annotation encoding="application/x-tex">-2^{63}\sim2^{63}-1\approx\left |9.2\times10^{18}   \right |</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.212em;vertical-align:-0.35000999999999993em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.86199em;"><span style="top:-2.2559899999999997em;"><span class="pstrut" style="height:2.606em;"></span><span class="delimsizinginner delim-size1"><span>∣</span></span></span><span style="top:-2.86199em;"><span class="pstrut" style="height:2.606em;"></span><span class="delimsizinginner delim-size1"><span>∣</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35000999999999993em;"><span></span></span></span></span></span></span><span class="mord">9</span><span class="mord">.</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">8</span></span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.86199em;"><span style="top:-2.2559899999999997em;"><span class="pstrut" style="height:2.606em;"></span><span class="delimsizinginner delim-size1"><span>∣</span></span></span><span style="top:-2.86199em;"><span class="pstrut" style="height:2.606em;"></span><span class="delimsizinginner delim-size1"><span>∣</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35000999999999993em;"><span></span></span></span></span></span></span></span></span></span></span>又称<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi>n</mi><mi>t</mi><mn>64</mn></mrow><annotation encoding="application/x-tex">int64</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord">6</span><span class="mord">4</span></span></span></span></p>
+<p><strong>float</strong>: 单精度实数型，占用4字节，范围：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>3.4</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>38</mn></msup><mo>∼</mo><mn>3.4</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>38</mn></msup></mrow><annotation encoding="application/x-tex">-3.4\times10^{38}\sim3.4\times10^{38}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">3</span><span class="mord">.</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">8</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord">.</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span></span>，精度约为7位有效数字</p>
+<p><strong>double</strong>: 双精度实数型，占用8字节，范围：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1.7</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>308</mn></msup><mo>∼</mo><mn>1.7</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>308</mn></msup></mrow><annotation encoding="application/x-tex">-1.7\times10^{308}\sim1.7\times10^{308}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">.</span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">0</span><span class="mord mtight">8</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">0</span><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span></span>，精度约为15位有效数字</p>
+<p><strong>char</strong>: 字符型，占用1个字节，表示一个字符，需用<code>英文单引号</code>括起来，如：<code>'a','0'</code>，char 类型中存放字符的ASCLL码。</p>
+<p><strong>bool</strong>: 布尔型，用于表示真，假逻辑值，占1个字节。赋值<code>0为false</code>,<code>非0为true</code>。</p>
+<h3 id="程序基本语句">程序基本语句</h3>
+<p><strong>cin,cout</strong>: 在iostream标准库中定义：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+</code></pre>
+<p>可控制标准的输入输出流，其中<code>cin为输入</code>,<code>cout为输出</code><br>
+code↓</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;//调用标准库
+using namespace std;//定义命名空间，避免函数库产生冲突
+int main(){//调用主函数
+	int a,b;//定义两个int类型的变量
+	cin&gt;&gt;a&gt;&gt;b;//输入这两个变量
+	//std::cin&gt;&gt;a&gt;&gt;b;//如果没有&quot;using namespace std;&quot;就需要加上&quot;std::&quot;；
+	cout&lt;&lt;a+b;
+	//std::cout&lt;&lt;a+b;//同上。只需要在输入和输出时加上即可
+	return 0;//告诉机器程序正常结束
+}
+</code></pre>
+<p><strong>return 0</strong> 结果如下</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/0c4db7f70e2d42ebb9740e2d2baa5324.bmp#pic_center" alt="在这里插入图片描述" loading="lazy"><br>
+如果程序(函数)不是正常结束，加上了 <strong>return 0</strong> ,返回值就不会是<strong>0</strong>。</p>
+<h3 id="保留浮点数小数">保留浮点数（小数）</h3>
+<p>可以使用<strong>fixed</strong> , <strong>setprecision(x)</strong> <strong>setiosflags(ios::fixed)</strong> 来控制精度。</p>
+<p>其中<strong>setiosflags(ios::fixed)</strong> 为设置小数点后的精度。</p>
+<p>其中<strong>setprecision(x)</strong> 为将精度设置为<strong>x</strong>位。</p>
+<p>需使用<code>iomanip</code>作为标准库</p>
+<pre><code class="language-cpp">#include &lt;iomanip&gt;
+</code></pre>
+<p>整体比较 code↓</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;//调用标准库
+using namespace std;
+int main(){
+	double o=123.456789;
+	cout&lt;&lt;setprecision(4)&lt;&lt;o&lt;&lt;endl;//整体保留4位
+	//&lt;1&gt;↑
+	cout&lt;&lt;fixed&lt;&lt;setprecision(3)&lt;&lt;o&lt;&lt;endl;//小数部分保留3位
+	//&lt;2&gt;↑
+	setiosflags(ios::fixed);//命令：以下的&quot;setprecision(x)&quot;都是设置小数部分
+	cout&lt;&lt;setprecision(3)&lt;&lt;o&lt;&lt;endl;//效果等同于&lt;2&gt;
+	cout&lt;&lt;setprecision(4)&lt;&lt;o&lt;&lt;endl;//设置小数部分的精度为4
+	//&lt;3&gt;↑
+	return 0;//程序正常结束
+}
+</code></pre>
+<p>运行结果：↓<br>
+<img src="https://img-blog.csdnimg.cn/direct/26fde2ed6d6d4bf48916aedfae78fdda.png#pic_center" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="文件输入输出cincout-加速可以加速到约等于scanfprintf">文件输入输出,cin,cout 加速[可以加速到约等于scanf(),printf()]</h3>
+<p>code↓</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;//包含大多数函数库的头文件
+using namespace std;
+int main(){
+	ios::sync_with_stdio(false)
+	cin.tie(0),cout.tie(0);
+	freopen(&quot;xxx.in&quot;,&quot;r&quot;,stdin)//从xxx.in进行读入，如果xxx.in不存在则失败
+	freopen(&quot;xxx.out&quot;,&quot;w&quot;,stdout)
+	//将输出写入xxx.out，如果xxx.out不存在则创建这个文件
+	return 0;
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E7%A8%8B%E5%BA%8F%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">程序基本概念</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">基本数据类型</a></li>
+<li><a href="#%E7%A8%8B%E5%BA%8F%E5%9F%BA%E6%9C%AC%E8%AF%AD%E5%8F%A5">程序基本语句</a></li>
+<li><a href="#%E4%BF%9D%E7%95%99%E6%B5%AE%E7%82%B9%E6%95%B0%E5%B0%8F%E6%95%B0">保留浮点数（小数）</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BAcincout-%E5%8A%A0%E9%80%9F%E5%8F%AF%E4%BB%A5%E5%8A%A0%E9%80%9F%E5%88%B0%E7%BA%A6%E7%AD%89%E4%BA%8Escanfprintf">文件输入输出,cin,cout 加速[可以加速到约等于scanf(),printf()]</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Xeovei.github.io/post/damoxing/">
+              <h3 class="post-title">
+                有关大模型的一些想法
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://Xeovei.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

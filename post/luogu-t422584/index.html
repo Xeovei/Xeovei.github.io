@@ -1,0 +1,212 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>T422584 mirror | Xeovei</title>
+<link rel="shortcut icon" href="https://Xeovei.github.io/favicon.ico?v=1708774079339">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://Xeovei.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="T422584 mirror | Xeovei - Atom Feed" href="https://Xeovei.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="题意
+给你一个字符串，请你输出它镜面翻转的样子
+样例
+输入
+01258AHIJLMOTUVWXY
+输出
+YXWVUTOMJLIHA82510
+样例解释:第一个样例包含所有可能出现的字符
+思路
+1.将整个字符串倒序
+2.因为是镜面,而样例中只..." />
+    <meta name="keywords" content="luogu" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Xeovei.github.io">
+  <img class="avatar" src="https://Xeovei.github.io/images/avatar.png?v=1708774079339" alt="">
+  </a>
+  <h1 class="site-title">
+    Xeovei
+  </h1>
+  <p class="site-description">
+    光锥之内皆是命运 光锥之外皆是虚妄
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              T422584 mirror
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-02-01
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+                <a href="https://Xeovei.github.io/tag/luogu/" class="post-tag">
+                  # luogu
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://Xeovei.github.io/post-images/luogu-t422584.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h1 id="题意">题意</h1>
+<p>给你一个字符串，请你输出它镜面翻转的样子</p>
+<h2 id="样例">样例</h2>
+<p>输入<br>
+<code>01258AHIJLMOTUVWXY</code><br>
+输出<br>
+<code>YXWVUTOMJLIHA82510</code><br>
+样例解释:第一个样例包含所有可能出现的字符</p>
+<h1 id="思路">思路</h1>
+<p>1.将整个字符串<code>倒序</code><br>
+2.因为是镜面,而样例中只有<code>25JL</code>需要翻转，所以只需要特判一下就可以了</p>
+<p>code↓</p>
+<pre><code class="language-c">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+string s;
+int main(){
+//	freopen(&quot;mirror.in&quot;,&quot;r&quot;,stdin);
+//	freopen(&quot;mirror.out&quot;,&quot;w&quot;,stdout);
+	cin&gt;&gt;s;
+	int n=s.length();
+	for(int i=n-1;i&gt;=0;i--){
+		if(s[i]=='J') cout&lt;&lt;&quot;L&quot;;
+		else if(s[i]=='L') cout&lt;&lt;&quot;J&quot;;
+		else if(s[i]=='2') cout&lt;&lt;&quot;5&quot;;
+		else if(s[i]=='5') cout&lt;&lt;&quot;2&quot;;
+		else cout&lt;&lt;s[i];
+	}
+	return 0;
+}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E9%A2%98%E6%84%8F">题意</a>
+<ul>
+<li><a href="#%E6%A0%B7%E4%BE%8B">样例</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Xeovei.github.io/post/luogu-t420637/">
+              <h3 class="post-title">
+                T420637 组合数（c）
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://Xeovei.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

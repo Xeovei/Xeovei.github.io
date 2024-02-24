@@ -1,0 +1,232 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>P1394 山上的国度 | Xeovei</title>
+<link rel="shortcut icon" href="https://Xeovei.github.io/favicon.ico?v=1708774079339">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://Xeovei.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="P1394 山上的国度 | Xeovei - Atom Feed" href="https://Xeovei.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="题意
+有一个 nnn 个节点，mmm 条边构成的有向图，求能否给定(有且只有)一个源(水库)，使得能够从源出发，遍历所有节点。  (n,m ≤\leq≤ 300)
+如果可以,输出两行：第一行为 Oui, j'ai trouve la sol..." />
+    <meta name="keywords" content="luogu" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Xeovei.github.io">
+  <img class="avatar" src="https://Xeovei.github.io/images/avatar.png?v=1708774079339" alt="">
+  </a>
+  <h1 class="site-title">
+    Xeovei
+  </h1>
+  <p class="site-description">
+    光锥之内皆是命运 光锥之外皆是虚妄
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              P1394 山上的国度
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-02-02
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://Xeovei.github.io/tag/luogu/" class="post-tag">
+                  # luogu
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://Xeovei.github.io/post-images/luogu-p1394.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h2 id="题意">题意</h2>
+<p>有一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个节点，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 条边构成的有向图，求能否给定(有且只有)一个源(水库)，使得能够从源出发，遍历所有节点。  (n,m <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span></span></span></span> 300)</p>
+<p>如果可以,输出两行：第一行为 <code>Oui, j'ai trouve la solution.</code>，第二行为节点的编号。</p>
+<p>否则，请输出<code>Non</code>。</p>
+<h2 id="思路">思路</h2>
+<p>1.因为说明了(同海拔之间不能相互流水)，所以只需要用最大值做源即可。<br>
+2.如果有多个相同的最大值，或一定不能联通，即<code>m&lt;n-1</code>，就可以直接输出<code>Non</code>。<br>
+3.使用<code>邻接矩阵</code>存图。<br>
+4.BFS优选，DFS也可以做(这里我用的DFS)</p>
+<p>code↓</p>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int n,m,maxn=0,vis1=0;
+int high[1050]={};
+int figu[350][350];//邻接矩阵的数组
+int vis[1050]={};//标记数组：确定是否全部都遍历完成
+void dfs(int x){
+	vis[x]=1;//遍历到了这个节点后，进行标记
+	for(int i=1;i&lt;=n;i++){
+		if(figu[x][i]!=0){
+			figu[x][i]=0;//不进行重复的遍历
+			dfs(i);
+		}
+	}
+	return ;
+}
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0),cin.tie(0);
+	cin&gt;&gt;n&gt;&gt;m;
+	for(int i=1;i&lt;=n;i++){
+		cin&gt;&gt;high[i];
+		if(high[i]&gt;maxn) maxn=high[i],vis1=i;
+	}//maxn求的是最大值,vis1求的是值最大的节点的编号
+	for(int i=1;i&lt;=m;i++){
+		int x,y;
+		cin&gt;&gt;x&gt;&gt;y;
+		if(high[x]&lt;high[y]){
+			figu[y][x]=1;//邻接矩阵存图，这里是有向图
+			continue;
+		}
+		if(high[x]==high[y]){//高度相同
+			continue;
+		}
+		figu[x][y]=1;//存图
+	}
+	dfs(vis1);//进行搜索，是否遍历到了每一个节点
+	for(int i=1;i&lt;=n;i++){
+		if(vis[i]==0){//如果有（没有遍历到的节点）就输出&quot;Non&quot;;
+			cout&lt;&lt;&quot;Non&quot;;
+			return 0;//结束整个程序
+		}
+	}
+	cout&lt;&lt;&quot;Oui, j'ai trouve la solution.&quot;&lt;&lt;endl;//上方没有终止程序，输出
+	cout&lt;&lt;vis1;//输出值最大的节点的编号
+	return 0;
+}//完结撒花O(∩_∩)O
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E9%A2%98%E6%84%8F">题意</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Xeovei.github.io/post/sum/">
+              <h3 class="post-title">
+                洛谷 T422589 sum(求和)
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://Xeovei.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

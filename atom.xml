@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Xeovei.github.io</id>
+    <title>Xeovei</title>
+    <updated>2024-02-24T11:33:23.018Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Xeovei.github.io"/>
+    <link rel="self" href="https://Xeovei.github.io/atom.xml"/>
+    <subtitle>光锥之内皆是命运 光锥之外皆是虚妄</subtitle>
+    <logo>https://Xeovei.github.io/images/avatar.png</logo>
+    <icon>https://Xeovei.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2024, Xeovei</rights>
+    <entry>
+        <title type="html"><![CDATA[CCF-NOIP-2018提高组（复赛）模拟试题【帽子戏法】]]></title>
+        <id>https://Xeovei.github.io/post/hat/</id>
+        <link href="https://Xeovei.github.io/post/hat/">
+        </link>
+        <updated>2024-02-24T11:26:13.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[线性表【数组(vector)篇】]]></title>
+        <id>https://Xeovei.github.io/post/vector/</id>
+        <link href="https://Xeovei.github.io/post/vector/">
+        </link>
+        <updated>2024-02-24T11:24:45.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++程序设计(一) [cin,cout加速，基本数据类型，保留浮点数]]]></title>
+        <id>https://Xeovei.github.io/post/c++-1/</id>
+        <link href="https://Xeovei.github.io/post/c++-1/">
+        </link>
+        <updated>2024-02-19T15:37:36.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[有关大模型的一些想法]]></title>
+        <id>https://Xeovei.github.io/post/damoxing/</id>
+        <link href="https://Xeovei.github.io/post/damoxing/">
+        </link>
+        <updated>2024-02-19T15:36:14.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【模板】并查集]]></title>
+        <id>https://Xeovei.github.io/post/bing-cha-ji/</id>
+        <link href="https://Xeovei.github.io/post/bing-cha-ji/">
+        </link>
+        <updated>2024-02-05T08:39:31.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A+B problem（高精度加法）]]></title>
+        <id>https://Xeovei.github.io/post/ab-problemgao-jing-du-jia-fa/</id>
+        <link href="https://Xeovei.github.io/post/ab-problemgao-jing-du-jia-fa/">
+        </link>
+        <updated>2024-02-05T03:02:29.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[P1394 山上的国度]]></title>
+        <id>https://Xeovei.github.io/post/luogu-p1394/</id>
+        <link href="https://Xeovei.github.io/post/luogu-p1394/">
+        </link>
+        <updated>2024-02-02T15:30:19.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷 T422589 sum(求和)]]></title>
+        <id>https://Xeovei.github.io/post/sum/</id>
+        <link href="https://Xeovei.github.io/post/sum/">
+        </link>
+        <updated>2024-02-02T10:20:47.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[T422586 factor]]></title>
+        <id>https://Xeovei.github.io/post/luogu-t422586/</id>
+        <link href="https://Xeovei.github.io/post/luogu-t422586/">
+        </link>
+        <updated>2024-02-01T08:45:10.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[T422584 mirror]]></title>
+        <id>https://Xeovei.github.io/post/luogu-t422584/</id>
+        <link href="https://Xeovei.github.io/post/luogu-t422584/">
+        </link>
+        <updated>2024-02-01T08:23:19.000Z</updated>
+    </entry>
+</feed>

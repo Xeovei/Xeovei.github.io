@@ -1,0 +1,204 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>有关大模型的一些想法 | Xeovei</title>
+<link rel="shortcut icon" href="https://Xeovei.github.io/favicon.ico?v=1708774079339">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://Xeovei.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="有关大模型的一些想法 | Xeovei - Atom Feed" href="https://Xeovei.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="从NOI冬令营的讲座听到了一些有关大模型的想法
+
+AI到底在生成什么？
+AI是以人工智能技术驱动的自然语言处理工具,我们可以这样来概述它：
+
+那在这个生成器中，是怎样运用大模型的？
+我最开始以为AI运用这个生成器是直接生成文字，也就是后面的..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Xeovei.github.io">
+  <img class="avatar" src="https://Xeovei.github.io/images/avatar.png?v=1708774079339" alt="">
+  </a>
+  <h1 class="site-title">
+    Xeovei
+  </h1>
+  <p class="site-description">
+    光锥之内皆是命运 光锥之外皆是虚妄
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              有关大模型的一些想法
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-02-19
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://Xeovei.github.io/post-images/damoxing.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <pre><code>从NOI冬令营的讲座听到了一些有关大模型的想法
+</code></pre>
+<h2 id="ai到底在生成什么">AI到底在生成什么？</h2>
+<p>AI是以<code>人工智能技术驱动的自然语言处理工具</code>,我们可以这样来概述它：<br>
+<img src="https://img-blog.csdnimg.cn/direct/dfcac0da363c43cab6bee0642279198f.png#pic_center" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="那在这个生成器中是怎样运用大模型的">那在这个生成器中，是怎样运用大模型的？</h3>
+<p>我最开始以为AI运用这个<code>生成器</code>是直接生成文字，也就是后面的答案，但是听了讲座之后，我发现我错了。<br>
+这个生成器生成的不是文字，字词也不是句子，是<code>概率</code>，是可以量化的<code>概率</code>。</p>
+<pre><code class="language-cpp">输入：写一句3个字的我对你进行批评的话
+从这里，AI就可以找到关键词&lt;3个字&gt; &lt;我&gt; &lt;对你&gt; &lt;批评的话&gt;
+句首：1.我&lt;1&gt; 2.你&lt;1&gt; 3.他&lt;0.5&gt; .....
+	(按照大数据生成的模型中的大小进行排序)
+(2) 我 1.是&lt;1&gt; 2.爱&lt;1&gt; 3.打&lt;0.5&gt; .....
+	(搜索关键词:批评---&gt; &lt;打&gt; &lt;骂&gt; &lt;罚&gt;....按照关键字进行选择)
+(3) 我打  1.你&lt;1&gt; 2.我&lt;0.1&gt; 3.他&lt;0.1&gt; 4.&quot;。&quot;&lt;1&gt;...... 
+	（关键字：&quot;你&quot;，选择第一个)
+(4) 我打你 1.。&lt;1&gt;   2.！&lt;1&gt;   3.?&lt;1&gt;  ...
+	（判断整个句子的语气输出标点)
+//后面的&lt;x&gt;代表的就是概率,概率越大的就有越大的概率输出
+</code></pre>
+<h3 id="难点突破">难点突破</h3>
+<p>思路想到这里，就可以发现有几个难关需要我们进行突破:</p>
+<p>1.如何提取问题中的关键字，并进行判断？</p>
+<p>2.如何将概率值进行量化？</p>
+<p>3.如何优化关键字的搜索，加快AI生成的速度？</p>
+<p>4.按照怎样的语句进行输出？</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#ai%E5%88%B0%E5%BA%95%E5%9C%A8%E7%94%9F%E6%88%90%E4%BB%80%E4%B9%88">AI到底在生成什么？</a>
+<ul>
+<li><a href="#%E9%82%A3%E5%9C%A8%E8%BF%99%E4%B8%AA%E7%94%9F%E6%88%90%E5%99%A8%E4%B8%AD%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%90%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84">那在这个生成器中，是怎样运用大模型的？</a></li>
+<li><a href="#%E9%9A%BE%E7%82%B9%E7%AA%81%E7%A0%B4">难点突破</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Xeovei.github.io/post/bing-cha-ji/">
+              <h3 class="post-title">
+                【模板】并查集
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://Xeovei.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

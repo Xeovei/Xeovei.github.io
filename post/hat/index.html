@@ -1,0 +1,296 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CCF-NOIP-2018提高组（复赛）模拟试题【帽子戏法】 | Xeovei</title>
+<link rel="shortcut icon" href="https://Xeovei.github.io/favicon.ico?v=1708774079339">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://Xeovei.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="CCF-NOIP-2018提高组（复赛）模拟试题【帽子戏法】 | Xeovei - Atom Feed" href="https://Xeovei.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="题意
+1.给出正方体的长，提问次数
+2.每一个帽子都有一个颜色，颜色共26种，用26个大写字母来表示
+3.初始化所有帽子为绿色
+4.操作：将长方形区域内的所有帽子颜色变为x色
+code↓
+	for(int i=x2;i&lt;=x3;i++..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Xeovei.github.io">
+  <img class="avatar" src="https://Xeovei.github.io/images/avatar.png?v=1708774079339" alt="">
+  </a>
+  <h1 class="site-title">
+    Xeovei
+  </h1>
+  <p class="site-description">
+    光锥之内皆是命运 光锥之外皆是虚妄
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              CCF-NOIP-2018提高组（复赛）模拟试题【帽子戏法】
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-02-24
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://Xeovei.github.io/post-images/hat.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h3 id="题意">题意</h3>
+<p>1.给出正方体的长，提问次数</p>
+<p>2.每一个帽子都有一个颜色，颜色共26种，用26个<code>大写字母</code>来表示</p>
+<p>3.初始化所有帽子为绿色</p>
+<p>4.操作：将长方形区域内的<code>所有帽子颜色</code>变为<code>x色</code><br>
+code↓</p>
+<pre><code class="language-cpp">	for(int i=x2;i&lt;=x3;i++){
+		for(int j=y4;j&lt;=y5;j++){
+			for(int k=z2;k&lt;=z3;k++){
+				a[i][j][k]=o;
+			}
+		}
+	}
+</code></pre>
+<p>5.操作：将长方形区域内的所有<code>x颜色</code>的帽子变为<code>绿色</code></p>
+<pre><code class="language-cpp">	for(int i=x2;i&lt;=x3;i++){
+		for(int j=y4;j&lt;=y5;j++){
+			for(int k=z2;k&lt;=z3;k++){
+				if(a[i][j][k]==o) a[i][j][k]=7;
+			}
+		}
+	}
+</code></pre>
+<h4 id="解释">解释</h4>
+<p>为什么这里的将帽子<code>颜色变为绿色</code>是将<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>[</mo><mi>j</mi><mo>]</mo><mo>[</mo><mi>k</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">a[i][j][k]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">]</span></span></span></span>赋值为<code>7</code>？<br>
+因为当将<code>char</code>强制转换为<code>int</code>后减去<code>64</code>时<code>'A'=1</code>,此时<code>'G'=7</code><br>
+code↓</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+	char a;
+	cin&gt;&gt;a;
+	cout&lt;&lt;int(a)-64;
+	return 0;
+}
+</code></pre>
+<h3 id="总结code">总结code↓：</h3>
+<p>因为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>a</mi><mi>x</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>∗</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>∗</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>∗</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo>(</mo><mi>Q</mi><mo>)</mo><mo>=</mo><mn>12800000</mn></mrow><annotation encoding="application/x-tex">max(n)*max(n)*max(n)*max(Q)=12800000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord mathdefault">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord">8</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span><br>
+所以直接<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">n^{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span> 暴力即可，注意数组开大一点</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int n,q,op,a[42][42][42],x0,x1,y2,y3,z0,z1;
+int find(int x2,int y4,int z2,int x3,int y5,int z3){
+	int sum=0;
+	for(int i=x2;i&lt;=x3;i++){
+		for(int j=y4;j&lt;=y5;j++){
+			for(int k=z2;k&lt;=z3;k++){
+				if(a[i][j][k]==7) sum++;
+			}
+		}
+	}
+	return sum;
+}
+int col(int x2,int y4,int z2,int x3,int y5,int z3,int o){
+//	cout&lt;&lt;x2&lt;&lt;&quot; &quot;&lt;&lt;x3&lt;&lt;&quot; &quot;&lt;&lt;y4&lt;&lt;&quot; &quot;&lt;&lt;y5&lt;&lt;&quot; &quot;&lt;&lt;z2&lt;&lt;&quot; &quot;&lt;&lt;z3&lt;&lt;&quot;*&quot;&lt;&lt;endl;
+	for(int i=x2;i&lt;=x3;i++){
+		for(int j=y4;j&lt;=y5;j++){
+			for(int k=z2;k&lt;=z3;k++){
+				a[i][j][k]=o;
+//				cout&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;j&lt;&lt;&quot; &quot;&lt;&lt;k&lt;&lt;endl;
+			}
+		}
+	}
+	return 0;
+}
+int col2(int x2,int y4,int z2,int x3,int y5,int z3,int o){
+	for(int i=x2;i&lt;=x3;i++){
+		for(int j=y4;j&lt;=y5;j++){
+			for(int k=z2;k&lt;=z3;k++){
+				if(a[i][j][k]==o) a[i][j][k]=7;
+			}
+		}
+	}
+	return 0;
+}
+//int print(){
+//	for(int i=1;i&lt;=n;i++){
+//		for(int j=1;j&lt;=n;j++){
+//			for(int k=1;k&lt;=n;k++){
+//				cout&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;j&lt;&lt;&quot; &quot;&lt;&lt;k&lt;&lt;&quot; &quot;&lt;&lt;a[i][j][k]&lt;&lt;endl;
+//			}
+//		}
+//	}
+//	return 0;
+//}
+int main(){
+//	freopen(&quot;hat.in&quot;,&quot;r&quot;,stdin);
+//	freopen(&quot;hat.out&quot;,&quot;w&quot;,stdout);
+	cin&gt;&gt;n&gt;&gt;q;
+	col(1,1,1,n,n,n,7);
+	for(int i=1;i&lt;=q;i++){
+		cin&gt;&gt;op;
+		if(op==0){
+			cin&gt;&gt;x0&gt;&gt;y2&gt;&gt;z0&gt;&gt;x1&gt;&gt;y3&gt;&gt;z1;
+			cout&lt;&lt;find(x0,y2,z0,x1,y3,z1)&lt;&lt;endl;
+		}
+		if(op==1){
+			char ow;
+			cin&gt;&gt;x0&gt;&gt;y2&gt;&gt;z0&gt;&gt;x1&gt;&gt;y3&gt;&gt;z1&gt;&gt;ow;
+			col(x0,y2,z0,x1,y3,z1,int(ow-64));
+//			print();
+//			cout&lt;&lt;endl;
+		}
+		if(op==2){
+			char ow;
+			cin&gt;&gt;x0&gt;&gt;y2&gt;&gt;z0&gt;&gt;x1&gt;&gt;y3&gt;&gt;z1&gt;&gt;ow;
+			col2(x0,y2,z0,x1,y3,z1,int(ow-64));
+//			print();
+//			cout&lt;&lt;endl;
+		}
+	}
+	return 0;
+}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E9%A2%98%E6%84%8F">题意</a>
+<ul>
+<li><a href="#%E8%A7%A3%E9%87%8A">解释</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%BB%E7%BB%93code">总结code↓：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Xeovei.github.io/post/vector/">
+              <h3 class="post-title">
+                线性表【数组(vector)篇】
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://Xeovei.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
